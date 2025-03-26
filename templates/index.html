@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFD Анализ</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <h1>Анализ процессов</h1>
+
+    <h2>Пример с проблемными показателями</h2>
+    <h3>Кумулятивная диаграмма потока (CFD)</h3>
+    {{ cfd_chart_problem|safe }}
+    <p><b>Расшифровка:</b> Растущий Backlog и узкие места в In Progress и Review указывают на перегрузку команды и
+        низкую скорость завершения задач.</p>
+
+    <h3>Метрики: WIP, Throughput, Arrival Rate</h3>
+    {{ metrics_chart_problem|safe }}
+    <p><b>Расшифровка:</b> Высокий WIP (растущий объём незавершённой работы), низкий Throughput (мало завершённых задач)
+        и высокий Arrival Rate (много новых задач) говорят о проблемах с производительностью.</p>
+
+    <h3>Cycle Time (Среднее время выполнения)</h3>
+    {{ cycle_time_chart_problem|safe }}
+    <p><b>Расшифровка:</b> Увеличение времени выполнения задач (Cycle Time) показывает, что процессы замедляются из-за
+        заторов.</p>
+
+    <h2>Пример с хорошими показателями</h2>
+    <h3>Кумулятивная диаграмма потока (CFD)</h3>
+    {{ cfd_chart_good|safe }}
+    <p><b>Расшифровка:</b> Сужающийся Backlog, стабильные In Progress и Review, быстрый рост Done — процесс работает
+        эффективно.</p>
+
+    <h3>Метрики: WIP, Throughput, Arrival Rate</h3>
+    {{ metrics_chart_good|safe }}
+    <p><b>Расшифровка:</b> Низкий и стабильный WIP, высокий Throughput и контролируемый Arrival Rate показывают
+        сбалансированную и продуктивную работу.</p>
+
+    <h3>Cycle Time (Среднее время выполнения)</h3>
+    {{ cycle_time_chart_good|safe }}
+    <p><b>Расшифровка:</b> Низкое и стабильное время выполнения задач указывает на быстрый и гладкий процесс.</p>
+</body>
+
+</html>

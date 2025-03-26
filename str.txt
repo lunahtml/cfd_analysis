@@ -1,0 +1,7 @@
+cfd_analysis/
+│── app.py                # Flask-приложение
+│── requirements.txt       # Зависимости
+│── Dockerfile             # Docker-образ
+│── docker-compose.yml 
+│── templates/
+│   └── index.html         # HTML-шаблон с графиками
