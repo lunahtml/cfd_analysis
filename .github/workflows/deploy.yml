@@ -29,5 +29,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /var/www/cfd_analysis
-            docker-compose down  # Останавливаем и удаляем старые контейнеры
-            docker-compose up --build -d  # Собираем и запускаем новые контейнеры в фоновом режиме
+            docker-compose down
+            docker-compose up --build -d
